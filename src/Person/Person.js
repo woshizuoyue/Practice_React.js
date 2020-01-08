@@ -1,8 +1,8 @@
 import React from 'react';
 
-const person = () =>{
+const person = (props) =>{
 
-return <p>Lalola!!! I'm {Math.floor(Math.random() * 30)} years old.</p>
+    return <p>I'm {props.name} and I'm {props.age} years old.</p>
 }
 
 export default person;
