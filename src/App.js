@@ -6,7 +6,7 @@ class App extends Component {
 
   state = {
     
-    person: [
+    persons: [
       {name: 'lulula', age: 28},
       {name: 'gola', age: 23}
     ],
@@ -23,7 +23,7 @@ class App extends Component {
 
     this.setState(
       {
-        person: [
+        persons: [
           {name: 'hahago', age: 30},
           {name: newName, age: 32}
         ]
@@ -35,7 +35,7 @@ class App extends Component {
 
     this.setState({
 
-      person:[
+      persons:[
         {name : 'lulula', age: 30},
         {name: event.target.value, age: 32}
       ]
@@ -66,15 +66,11 @@ class App extends Component {
 
       persons = (
           <div>
-            <Person 
-                name={this.state.person[0].name} 
-                age={this.state.person[0].age}
-                click = {this.switchNameHandler.bind(this, 'lola')}>Hobby is : Reading</Person>
 
-                <Person name={this.state.person[1].name} 
-                age={this.state.person[1].age}
-                changed={this.nameChangedHandler}/>
+            {this.state.persons.map(person=>{
 
+              return <Person name = {person.name} age = {person.age}/>
+            })}
           </div>    
       );
     }
@@ -84,7 +80,6 @@ class App extends Component {
           <button 
           style={style}
           onClick={this.togglePersonHandler}>Switch Name</button>
-
           {persons}
         </div>
       );
