@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Cockpit.css';
 const cockpit = props => {
-  const assignedClasses = [];
+  useEffect(() => {
+    console.log('[Cockpit.js] useEffect');
+    setTimeout(() => {
+      alert('save data to the clould!');
+    });
+  }, []);
 
+  const assignedClasses = [];
   if (props.persons.length < 2) {
     assignedClasses.push(classes.red);
   }
