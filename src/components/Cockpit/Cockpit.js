@@ -6,6 +6,10 @@ const cockpit = props => {
     setTimeout(() => {
       alert('save data to the clould!');
     });
+
+    return () => {
+      console.log('[Cockpit.js] cleanup work in useEffect');
+    };
   }, []);
 
   const assignedClasses = [];
